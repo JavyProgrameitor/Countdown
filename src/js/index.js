@@ -6,6 +6,15 @@ bodyElement.style.backgroundSize = 'cover';
 bodyElement.style.backgroundPosition = 'center';
 bodyElement.style.backgroundRepeat = 'no-repeat';
 
+// Create the "Return to Portfolio" button (this part is key)
+const returnButton = document.createElement('button');
+returnButton.textContent = "Return to Portfolio";
+returnButton.classList.add('button');
+bodyElement.appendChild(returnButton);
+
+// Add event listener for returning to the portfolio
+returnButton.addEventListener("click", returnPortfolio);
+
 // Apply blend mode so the background color blends with the image
 bodyElement.style.backgroundBlendMode = 'overlay';
 bodyElement.style.transition = 'background-color 0.5s ease'; // Smooth background color transition
@@ -135,7 +144,12 @@ function startCountdown() {
   countdown(); // Execute once immediately
 }
 
+function returnPortfolio() {
+  window.location.href = "https://javyprogrameitor.github.io/Portfolio/";
+}
+
 button.addEventListener("click", startCountdown); // Event to start the countdown on button click
+
 
 function countdown() {
   currentDate = new Date(); // Get the current date
