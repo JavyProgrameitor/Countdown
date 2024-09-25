@@ -1,0 +1,94 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Varela Round';
+  transition: background-color 1s ease;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-size: 50px;
+  margin: 30px 0;
+  text-align: center;
+  text-shadow: 2px 2px #4e53ff;
+}
+
+.subtitle {
+  font-size: 35px;
+  margin: 30px 0;
+  text-align: center;
+  text-shadow: 2px 1px #4e53ff;
+
+}
+
+.input-text {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4e53ff;
+  border: 3px solid #4e53ff; 
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+
+.button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #4e53ff; 
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9; 
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  background-color: #1a5a7b; 
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.countdown-container {
+ display: flex;
+}
+.countdown-container div {
+  text-align: center;
+  
+}
+.countdown-container p {
+  font-size: 60px;
+  font-weight: bold;
+  color:#fcff47;
+  text-shadow: 2px 1px #4e53ff;
+  margin-top:  30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.countdown-container span {
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 2px 1px #4e53ff;
+  margin-top:  30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
