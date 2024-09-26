@@ -31,10 +31,10 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0; /* Ajusta el margen según prefieras */
+  margin: 20px 0; 
 }
 
-/* El input-text sigue manteniendo sus estilos previos */
+
 .input-text {
   padding: 10px;
   font-size: 20px;
@@ -42,10 +42,8 @@ h1 {
   color: #4e53ff;
   border: 3px solid #4e53ff;
   border-radius: 5px;
-  text-align: center; /* Centrar el texto dentro del input */
+  text-align: center; 
 }
-
-
 
 
 .buttonReturn {
