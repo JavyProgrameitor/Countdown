@@ -10,11 +10,7 @@ body {
   transition: background-color 1s ease;
   background-position: center;
   background-size: cover;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh
 }
 h1 {
   font-size: 50px;
@@ -31,20 +27,31 @@ h1 {
 
 }
 
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Ajusta el margen según prefieras */
+}
+
+/* El input-text sigue manteniendo sus estilos previos */
 .input-text {
   padding: 10px;
   font-size: 20px;
   font-weight: bold;
   color: #4e53ff;
-  border: 3px solid #4e53ff; 
+  border: 3px solid #4e53ff;
   border-radius: 5px;
-  margin-bottom: 20px;
+  text-align: center; /* Centrar el texto dentro del input */
 }
 
 
-.button {
+
+
+.buttonReturn {
   padding: 12px 24px;
   font-size: 16px;
+  display: flex;
   font-weight: bold;
   color: white;
   background-color: #4e53ff; 
@@ -53,29 +60,32 @@ h1 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+
 }
 
-.button:hover {
+.buttonReturn:hover {
   background-color: #2980b9; 
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.button:active {
-  background-color: #1a5a7b; 
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.containerReturn {
+ padding: 12px 24px;
+  font-size: 16px;
 }
 
-
 .countdown-container {
- display: flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .countdown-container div {
   text-align: center;
   
 }
 .countdown-container p {
+  display: flex;
+  justify-content: center;
   font-size: 60px;
   font-weight: bold;
   color:#fcff47;
@@ -85,6 +95,9 @@ h1 {
   margin-right: 30px;
 }
 .countdown-container span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   font-size: 30px;
   font-weight: bold;
   text-shadow: 2px 1px #4e53ff;

@@ -6,14 +6,24 @@ bodyElement.style.backgroundSize = 'cover';
 bodyElement.style.backgroundPosition = 'center';
 bodyElement.style.backgroundRepeat = 'no-repeat';
 
-// Create the "Return to Portfolio" button (this part is key)
+// // Create the "Return to Portfolio" button (this part is key)
+const containerButton = document.createElement("div");
+containerButton.classList.add("containerReturn");
+bodyElement.appendChild(containerButton);
+
 const returnButton = document.createElement('button');
 returnButton.textContent = "Return to Portfolio";
-returnButton.classList.add('button');
-bodyElement.appendChild(returnButton);
+returnButton.classList.add('buttonReturn');
+containerButton.appendChild(returnButton);
 
 // Add event listener for returning to the portfolio
 returnButton.addEventListener("click", returnPortfolio);
+
+//funtion return to Portfolio
+function returnPortfolio() {
+  window.location.href = "https://javyprogrameitor.github.io/Portfolio/";
+}
+
 
 // Apply blend mode so the background color blends with the image
 bodyElement.style.backgroundBlendMode = 'overlay';
@@ -21,26 +31,26 @@ bodyElement.style.transition = 'background-color 0.5s ease'; // Smooth backgroun
 
 // Create and add the title
 const title = document.createElement("h1");
-title.textContent = "Countdown to a specific date...";
+title.textContent = "Countdown selects is: Christmas 2024/12/25";
 bodyElement.appendChild(title);
 
 // Create a subtitle
 const subtitle = document.createElement("h2");
-subtitle.textContent = "Enter your chosen date";
+subtitle.textContent = "Choose your special day to countdown :";
 subtitle.classList.add('subtitle');
 bodyElement.appendChild(subtitle);
+
+// Create a container for the input field
+const inputContainer = document.createElement('div');
+inputContainer.classList.add('input-container');
+bodyElement.appendChild(inputContainer);
 
 // Create the input field (date type)
 const inputField = document.createElement('input');
 inputField.setAttribute('type', 'date');
 inputField.classList.add('input-text');
-bodyElement.appendChild(inputField);
+inputContainer.appendChild(inputField);
 
-// Create a button to start the countdown
-const button = document.createElement('button');
-button.textContent = "Start Countdown";
-button.classList.add('button');
-bodyElement.appendChild(button);
 
 // Create a container for the countdown
 const countdownContainer = document.createElement("div");
@@ -121,6 +131,7 @@ secondsContainer.appendChild(secondsLabel);
 
 countdownContainer.appendChild(secondsContainer);
 
+
 // Get countdown elements
 const monthsElement = document.getElementById("months");
 const daysElement = document.getElementById('days');
@@ -129,26 +140,26 @@ const minsElement = document.getElementById('minutes');
 const secondsElement = document.getElementById('seconds');
 
 // Countdown logic
-let goalDate; // Defined by the user
+let goalDate = new Date(2024, 12, 25, 0, 0);
 let currentDate, month, days, hours, mins, seconds, totalSeconds;
 let timer;
 
 // Function to start the countdown
 function startCountdown() {
-  const inputDate = inputField.value; // Get the date input value
+  clearInterval(timer); // Reset the counter
 
-  goalDate = new Date(inputDate); // Set the goal date chosen by the user
+  // Get the date selected by the user
+  const inputDate = inputField.value; 
 
-  clearInterval(timer); // Restart the countdown if it's already running
+  // If the user has entered a valid date, update the target date
+  if (inputDate) {
+    goalDate = new Date(inputDate);
+  }
+
+  //Start the counter
   timer = setInterval(countdown, 1000);
-  countdown(); // Execute once immediately
+  countdown(); 
 }
-
-function returnPortfolio() {
-  window.location.href = "https://javyprogrameitor.github.io/Portfolio/";
-}
-
-button.addEventListener("click", startCountdown); // Event to start the countdown on button click
 
 
 function countdown() {
@@ -195,3 +206,20 @@ function countdown() {
     bodyElement.style.backgroundColor = "rgba(0, 128, 0, 0.8)"; // Green with opacity (fallback)
   }
 }
+//Start the counter to the predetermined date
+// window.onload = function() {
+//   startCountdown(); 
+// };
+
+window.onload = function() {
+  // I have used local Storage to store the date
+  const savedGoalDate = localStorage.getItem('goalDate');
+  if (savedGoalDate) {
+    goalDate = new Date(savedGoalDate); // Set saved date as target
+  }
+  startCountdown();
+};
+
+
+//Update target date
+inputField.addEventListener('change', startCountdown);
