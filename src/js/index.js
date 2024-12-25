@@ -1,11 +1,6 @@
 // Dynamically create the HTML structure of the countdown
 const bodyElement = document.body;
 
-bodyElement.style.backgroundImage = 'url(https://media.istockphoto.com/id/1449118185/es/foto/cron%C3%B3metro-vista-frontal.jpg?b=1&s=612x612&w=0&k=20&c=L3uLFGkLOspuLIm1H6UtP7YF7JhC28LwmnPzftiN3M4=)';
-bodyElement.style.backgroundSize = 'cover';
-bodyElement.style.backgroundPosition = 'center';
-bodyElement.style.backgroundRepeat = 'no-repeat';
-
 // // Create the "Return to Portfolio" button (this part is key)
 const containerButton = document.createElement("div");
 containerButton.classList.add("containerReturn");
@@ -206,11 +201,6 @@ function countdown() {
     bodyElement.style.backgroundColor = "rgba(0, 128, 0, 0.8)"; // Green with opacity (fallback)
   }
 }
-//Start the counter to the predetermined date
-// window.onload = function() {
-//   startCountdown(); 
-// };
-
 window.onload = function() {
   // I have used local Storage to store the date
   const savedGoalDate = localStorage.getItem('goalDate');

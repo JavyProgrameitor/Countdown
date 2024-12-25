@@ -8,20 +8,21 @@
 body {
   font-family: 'Varela Round';
   transition: background-color 1s ease;
-  background-position: center;
+  background-image: url("https://media.istockphoto.com/id/1449118185/es/foto/cron%C3%B3metro-vista-frontal.jpg?b=1&s=612x612&w=0&k=20&c=L3uLFGkLOspuLIm1H6UtP7YF7JhC28LwmnPzftiN3M4=");
   background-size: cover;
-  min-height: 100vh
+  background-position: center;
+  background-repeat: no-repeat;
 }
 h1 {
   font-size: 50px;
-  margin: 30px 0;
+  margin: 20px 0;
   text-align: center;
   text-shadow: 2px 2px #4e53ff;
 }
 
 .subtitle {
   font-size: 35px;
-  margin: 30px 0;
+  margin: 20px 0;
   text-align: center;
   text-shadow: 2px 1px #4e53ff;
 
@@ -31,13 +32,13 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0; 
+  margin: 5px 0; 
 }
 
 
 .input-text {
-  padding: 10px;
-  font-size: 20px;
+  padding: 8px;
+  font-size: 15px;
   font-weight: bold;
   color: #4e53ff;
   border: 3px solid #4e53ff;
@@ -47,7 +48,7 @@ h1 {
 
 
 .buttonReturn {
-  padding: 12px 24px;
+  padding: 10px 20px;
   font-size: 16px;
   display: flex;
   font-weight: bold;
@@ -76,11 +77,10 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: nowrap; 
 }
-.countdown-container div {
-  text-align: center;
-  
-}
+
+
 .countdown-container p {
   display: flex;
   justify-content: center;
@@ -102,4 +102,73 @@ h1 {
   margin-top:  30px;
   margin-left: 30px;
   margin-right: 30px;
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 40px;
+  }
+  .subtitle {
+    font-size: 28px;
+  }
+  .countdown-container p {
+    font-size: 50px;
+    margin: 20px;
+  }
+  .countdown-container span {
+    font-size: 24px;
+  }
+  body {
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: 80%;         
+    background-position: center center;
+
+  }
+}
+
+@media (min-width: 1000px) {
+
+  body {
+    background-size: 50%;         
+    background-position: center center;
+
+  }
+}
+
+
+@media (max-width: 768px) {
+  .countdown-container {
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+  .countdown-container div {
+    margin-bottom: 10px;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 25px;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
+  .input-text {
+    font-size: 14px;
+  }
+  .countdown-container p {
+    font-size: 35px;
+    margin: 5px;
+  }
+  .countdown-container span {
+    font-size: 20px;
+  }
+  .buttonReturn {
+    font-size: 10px;
+  }
+
 }
