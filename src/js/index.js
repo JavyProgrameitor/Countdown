@@ -21,7 +21,7 @@ function returnPortfolio() {
 
 
 // Apply blend mode so the background color blends with the image
-bodyElement.style.backgroundBlendMode = 'overlay';
+bodyElement.style.backgroundBlendMode = 'multiply';
 bodyElement.style.transition = 'background-color 0.5s ease'; // Smooth background color transition
 
 // Create and add the title
@@ -190,15 +190,15 @@ function countdown() {
   // Change the background color based on the time remaining
   if (totalDays > 14) {
     // More than two weeks
-    bodyElement.style.backgroundColor = "rgba(0, 128, 0, 0.8)"; // Green with opacity
+    bodyElement.style.backgroundColor = "rgba(0, 128, 0, 0.6)"; // Green with opacity
   } else if (totalDays <= 14 && totalDays > 7) {
     // Less than two weeks, but more than one week
-    bodyElement.style.backgroundColor = "rgba(255, 90, 0, 0.8)"; // Orange with opacity
+    bodyElement.style.backgroundColor = "rgba(255, 90, 0, 0.6)"; // Orange with opacity
   } else if (totalDays <= 7) {
     // Less than a week
-    bodyElement.style.backgroundColor = "rgba(139, 0, 0, 0.8)"; // Red with opacity
+    bodyElement.style.backgroundColor = "rgba(139, 0, 0, 0.6)"; // Red with opacity
   } else {
-    bodyElement.style.backgroundColor = "rgba(0, 128, 0, 0.8)"; // Green with opacity (fallback)
+    bodyElement.style.backgroundColor = "rgba(0, 128, 0, 0.6)"; // Green with opacity (fallback)
   }
 }
 window.onload = function() {
